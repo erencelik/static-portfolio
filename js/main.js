@@ -1,94 +1,31 @@
 let titles = [
-    {
-        key: 1,
-        v1: "i0s D3?eLo&3r",
-        v2: "iOS Developer"
-    },
-    {
-        key: 2,
-        v1: "4nDr0id de?eLo$3r",
-        v2: "Android Developer"
-    },
-    {
-        key: 3,
-        v1: "b4ck3nd d3Veloper",
-        v2: "Backend Developer"
-    },
-    {
-        key: 4,
-        v1: "fr0nt3nD deveL0p3R",
-        v2: "Frontend Developer"
-    },
-    {
-        key: 5,
-        v1: "&I - U? d3veLop3r",
-        v2: "UI / UX Developer"
-    },
-    {
-        key: 6,
-        v1: "1ndi3 d3ve?oPeR",
-        v2: "Indie Developer"
-    },
-    {
-        key: 7,
-        v1: "h4c&3r",
-        v2: "Hacker"
-    },
-    {
-        key: 8,
-        v1: "n0b?dy",
-        v2: "Nobody"
-    },
-    {
-        key: 9,
-        v1: "v0id",
-        v2: "void"
-    },
-    {
-        key: 10,
-        v1: "n?L$",
-        v2: "null"
-    },
-    {
-        key: 11,
-        v1: "virus",
-        v2: "tr0jan"
-    },
-    {
-        key: 12,
-        v1: "0x65726e",
-        v2: "maLw4r3"
-    },
-    {
-        key: 13,
-        v1: "undefined",
-        v2: "unknown"
-    },
-    {
-        key: 14,
-        v1: "NaN",
-        v2: "none"
-    },
-    {
-        key: 15,
-        v1: "n00b",
-        v2: "??????????"
-    },
-    {
-        key: 16,
-        v1: "display-none",
-        v2: "hidden"
-    },
-    {
-        key: 17,
-        v1: "&!*)!$(!",
-        v2: "invalid"
-    },
-    {
-        key: 18,
-        v1: "failure",
-        v2: "kernel_panic"
-    }
+     "ind1e",
+     "h4ck3r",
+     "n0b?dy",
+     "void",
+     "null",
+     "virus",
+     "tr0jan",
+     "0x636c6b",
+     "0x65726e",
+     "maLw4r3",
+     "undefined",
+     "mach_trap",
+     "unknown",
+     "NaN",
+     "none",
+     "????????",
+     "hidden",
+     "&!*)!$(!",
+     "invalid",
+     "failure",
+     "kernel_panic",
+     "m4dness",
+     "chaos",
+     "ch4os",
+     "transient",
+     "exception",
+     "unevictable"
 ];
 
 var initialTitle;
@@ -103,42 +40,58 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         document.title = document.title == "erencelik" ? "0x65726e" : "erencelik";
 
-        switchTitle(() => {
-            switchTitle(() => {
-                switchTitle(() => {
-                    switchTitle(null, true);
-                });
-            });
-        });
+        let count = getRandomInt(4, 8);
 
-    }, 6480);
+        let interval = getRandomInt(44, 88);
+
+        loopTitles(count, interval);
+
+    }, 6000);
 
 });
 
-function switchTitle(completion, finalize) {
+function loopTitles(count, interval) {
 
     var element = document.getElementById("switcher");
 
-    var data = titles[Math.floor(Math.random()*titles.length)]
+    var copied = [...titles];
 
-    element.innerHTML = data.v1;
+    var index = getRandomInt(0, copied.length);
 
-    setTimeout(() => {
+    var title = copied[index];
 
-        element.innerHTML = data.v2;
+    copied.splice(index, 1);
+
+    element.innerHTML = title;
+
+    for(let i = 1; i <= count; i++) {
 
         setTimeout(() => {
-            
-            if(finalize == true) {
+
+            if(i == count) {
+
                 element.innerHTML = initialTitle;
+
+            } else {
+
+                index = getRandomInt(0, copied.length);
+
+                title = copied[index]
+                
+                copied.splice(index, 1);
+
+                element.innerHTML = title;
+
             }
 
-            if(completion != null) {
-                completion();
-            }
+        }, interval*i);
 
-        }, 99);
+    }
 
-    }, 99);
+}
 
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
 }
