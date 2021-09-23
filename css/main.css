@@ -13,13 +13,14 @@ html {
 
 body {
     display: block;
-    min-width: 800;
-    background-color: #121212;
+    min-width: 960;
+    background-color: #0D0D0D;
     color: #BBB;
+    letter-spacing: 0.25;
 }
 
 div {
-    width: 800;
+    width: 960;
     display: block;
     text-align: justify;
     margin-left: auto;
@@ -34,9 +35,15 @@ div {
     color: white;
     display: block;
     text-align: justify;
-    font-size: 28px;
+    font-size: 32px;
     line-height: 1.25;
     font-weight: bold;
+}
+
+#quote>i {
+    color: #CCC;
+    font-size: 28;
+    letter-spacing: 1.5;
 }
 
 ul {
@@ -47,9 +54,8 @@ ul {
 }
 
 li {
-    color: #DDD;
     display: block;
-    font-size: 20px;
+    font-size: 22px;
     text-align: justify;
     list-style: none;
     line-height: 2;
@@ -57,31 +63,32 @@ li {
 }
 
 a {
-    color: cyan;
+    font-weight: bold;
+    color: #DDD;
     text-decoration: none;
 }
 
 a:hover {
-    color: cyan;
-    opacity: 0.4;
+    color: #FFF;
 }
 
 #switcher {
-    font-family: 'Courier New', Courier, monospace;
-    color: #0F0;
-    letter-spacing: 1;
+    /*font-family: 'Courier New', Courier, monospace;*/
+    font-family: 'Tourney', cursive;
+    letter-spacing: 2;
     font-weight: bold;
+    color: white;
 }
 
 #contact {
     display: inline-block;
-    font-size: 22px;
+    font-size: 24px;
     margin-top: 64;
 }
 
 .list-title {
     display: block;
-    font-size: 24px;
+    font-size: 26px;
     margin-top: 64;
     font-weight: bold;
 }
@@ -99,7 +106,7 @@ a:hover {
     padding-bottom: 16;
     border-radius: 28px;
     border: 1px solid #444;
-    font-size: 16px;
+    font-size: 18px;
     margin-right: 8;
     margin-top: 16;
 }

@@ -1,31 +1,49 @@
 let titles = [
-     "ind1e",
-     "h4ck3r",
-     "n0b?dy",
-     "void",
-     "null",
-     "virus",
-     "tr0jan",
-     "0x636c6b",
-     "0x65726e",
-     "maLw4r3",
-     "undefined",
-     "mach_trap",
-     "unknown",
-     "NaN",
-     "none",
-     "????????",
-     "hidden",
-     "&!*)!$(!",
-     "invalid",
-     "failure",
-     "kernel_panic",
-     "m4dness",
-     "chaos",
-     "ch4os",
-     "transient",
-     "exception",
-     "unevictable"
+    "su",
+    "@root",
+    "r@@t",
+    "whoami",
+    "ind1e",
+    "h4ck3r",
+    "n0b?dy",
+    "void",
+    "null",
+    "virus",
+    "tr0jan",
+    "0x636c6b",
+    "0x65726e",
+    "maLw4r3",
+    "undefined",
+    "mach_trap",
+    "unknown",
+    "NaN",
+    "none",
+    "??????????",
+    "¿¿¿¿¿¿¿¿¿¿",
+    "hidden",
+    "&!*)!$(!",
+    "invalid",
+    "failure",
+    "kernel_panic",
+    "m4dness",
+    "chaos",
+    "ch4os",
+    "transient",
+    "exception",
+    ">>>>>>>>>>>",
+    "<<<<<<<<<<<"
+];
+
+let colors = [
+    "red",
+    "green",
+    "yellowgreen", 
+    "cyan", 
+    "teal", 
+    "turquoise",
+    "orange",
+    "gold",
+    "yellow"
 ];
 
 var initialTitle;
@@ -36,17 +54,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     initialTitle = document.getElementById("switcher").innerHTML;
 
+    document.getElementById("switcher").style.color = getRandomColor();
+
     setInterval(() => {
 
         document.title = document.title == "erencelik" ? "0x65726e" : "erencelik";
 
-        let count = getRandomInt(4, 8);
+        let count = getRandomInt(6, 9);
 
-        let interval = getRandomInt(44, 88);
+        let interval = getRandomInt(66, 99);
 
-        loopTitles(count, interval);
+        loopTitles(count, 100);
 
-    }, 6000);
+    }, 6480);
 
 });
 
@@ -72,6 +92,8 @@ function loopTitles(count, interval) {
 
                 element.innerHTML = initialTitle;
 
+                element.style.color = getRandomColor();
+
             } else {
 
                 index = getRandomInt(0, copied.length);
@@ -94,4 +116,8 @@ function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min);
+}
+
+function getRandomColor() {
+    return colors[getRandomInt(0, colors.length)];
 }
