@@ -13,14 +13,14 @@ html {
 
 body {
     display: block;
-    min-width: 960;
+    min-width: 900;
     background-color: #0D0D0D;
     color: #BBB;
     letter-spacing: 0.25;
 }
 
 div {
-    width: 960;
+    width: 900;
     display: block;
     text-align: justify;
     margin-left: auto;

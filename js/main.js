@@ -54,7 +54,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     initialTitle = document.getElementById("switcher").innerHTML;
 
-    document.getElementById("switcher").style.color = getRandomColor();
+    let color = getRandomColor();
+
+    document.getElementById("switcher").style.color = color;
+    
+    document.getElementById("apple-logo").style.color = color;
 
     setInterval(() => {
 
@@ -92,7 +96,11 @@ function loopTitles(count, interval) {
 
                 element.innerHTML = initialTitle;
 
-                element.style.color = getRandomColor();
+                let color = getRandomColor();
+
+                element.style.color = color;
+
+                document.getElementById("apple-logo").style.color = color;
 
             } else {
 
