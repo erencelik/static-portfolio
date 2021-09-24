@@ -41,7 +41,8 @@ div {
 }
 
 #quote>i {
-    color: #CCC;
+    font-weight: normal;
+    color: #BBB;
     font-size: 28;
     letter-spacing: 1.5;
 }
@@ -74,15 +75,16 @@ a:hover {
 
 #switcher {
     /*font-family: 'Courier New', Courier, monospace;*/
-    font-family: 'Tourney', cursive;
+    /* font-family: 'Tourney', cursive; */
+    font-family: VT323, monospace;
+    font-size: 42;
     letter-spacing: 2;
-    font-weight: bold;
-    color: white;
+    color: #0F0;
 }
 
 #contact {
     display: inline-block;
-    font-size: 24px;
+    font-size: 28px;
     margin-top: 64;
 }
 

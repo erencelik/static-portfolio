@@ -1,25 +1,17 @@
 let titles = [
-    "su",
     "@root",
-    "r@@t",
     "whoami",
     "ind1e",
-    "h4ck3r",
-    "n0b?dy",
     "void",
     "null",
-    "virus",
-    "tr0jan",
     "0x636c6b",
     "0x65726e",
-    "maLw4r3",
     "undefined",
     "mach_trap",
+    "segment_failure",
     "unknown",
     "NaN",
     "none",
-    "??????????",
-    "¿¿¿¿¿¿¿¿¿¿",
     "hidden",
     "&!*)!$(!",
     "invalid",
@@ -28,10 +20,10 @@ let titles = [
     "m4dness",
     "chaos",
     "ch4os",
+    "err",
     "transient",
     "exception",
-    ">>>>>>>>>>>",
-    "<<<<<<<<<<<"
+    "error"
 ];
 
 let colors = [
@@ -54,21 +46,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     initialTitle = document.getElementById("switcher").innerHTML;
 
-    let color = getRandomColor();
-
-    document.getElementById("switcher").style.color = color;
-    
-    document.getElementById("apple-logo").style.color = color;
-
     setInterval(() => {
 
         document.title = document.title == "erencelik" ? "0x65726e" : "erencelik";
 
-        let count = getRandomInt(6, 9);
+        let count = getRandomInt(3, 9);
 
         let interval = getRandomInt(66, 99);
 
-        loopTitles(count, 100);
+        loopTitles(count, interval);
 
     }, 6480);
 
@@ -88,19 +74,13 @@ function loopTitles(count, interval) {
 
     element.innerHTML = title;
 
-    for(let i = 1; i <= count; i++) {
+    for(let i = 0; i <= count; i++) {
 
         setTimeout(() => {
 
             if(i == count) {
 
                 element.innerHTML = initialTitle;
-
-                let color = getRandomColor();
-
-                element.style.color = color;
-
-                document.getElementById("apple-logo").style.color = color;
 
             } else {
 
@@ -114,7 +94,7 @@ function loopTitles(count, interval) {
 
             }
 
-        }, interval*i);
+        }, (interval*(i+1))-(i*interval*(1/count)));
 
     }
 
