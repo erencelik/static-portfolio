@@ -1,5 +1,16 @@
 /* main.css */
 
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+  
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+}
+
 html {
     scroll-behavior: smooth;
     font-family: Inter, Helvetica, Lucida Sans, Arial, sans-serif;
@@ -16,7 +27,7 @@ body {
     min-width: 900;
     background-color: #101010;
     color: #BBB;
-    letter-spacing: 0.25;
+    letter-spacing: 0.3;
 }
 
 div {
@@ -67,15 +78,18 @@ a:hover {
 }
 
 #console-mimic {
-    margin-top: 64;
+    margin-top: 48;
     color: white;
     font-family: Ubuntu Mono, monospace;
     font-size: 24;
     display: inline-block;
     background-color: rgb(54, 9, 51);
     padding: 16;
-    width: 480;
-    line-height: 1.25;
+    padding-top: 32;
+    padding-bottom: 32;
+    min-width: 480;
+    width: 560;
+    line-height: 1.45;
     letter-spacing: .05em;
     border-radius: 8px 8px;
 }
@@ -101,17 +115,6 @@ a:hover {
     animation: typing 1.5s steps(40, end), blink-caret .65s step-end infinite;
 }
 
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-  
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: white; }
-}
-
 #switcher {
     /* font-family: VT323, 'Courier New', Courier, monospace; */
     /* font-size: 32; */
@@ -125,7 +128,7 @@ a:hover {
 #contact {
     display: inline-block;
     font-size: 24px;
-    margin-top: 64;
+    margin-top: 48;
 }
 
 .list-title {

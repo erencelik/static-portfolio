@@ -50,6 +50,10 @@ let _titles = [
     "error"
 ];
 
+var inputIndex = 0;
+var inputText = 'whoami';
+var initialAnimationCompleted = false;
+
 document.addEventListener('contextmenu', event => event.preventDefault());
 
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -58,13 +62,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         document.title = document.title == "erencelik" ? "0x65726e" : "erencelik";
 
-        consoleIterateTyping();
+        if(initialAnimationCompleted) {
+            beginLoopTitleAnimation();
+        } else {
+            beginConsoleAnimation();
+        }
 
     }, 6000);
 
 });
 
-function consoleIterateTyping() {
+function beginConsoleAnimation() {
 
     let element = document.getElementById("console-input");
 
@@ -77,15 +85,12 @@ function consoleIterateTyping() {
     document.getElementById("switcher").innerHTML = "&nbsp;";
 
     setTimeout(() => {
-        consoleMimicTypeWrite();
+        consoleMimicIterateTypeWrite();
     }, 360);
 
 }
 
-var inputIndex = 0;
-var inputText = 'whoami';
-
-function consoleMimicTypeWrite() {
+function consoleMimicIterateTypeWrite() {
 
     let element = document.getElementById("console-input");
 
@@ -95,7 +100,7 @@ function consoleMimicTypeWrite() {
 
         inputIndex++;
 
-        setTimeout(consoleMimicTypeWrite, 128);
+        setTimeout(consoleMimicIterateTypeWrite, 128);
 
     } else {
 
@@ -109,11 +114,9 @@ function consoleMimicTypeWrite() {
 
                 setTimeout(() => {
 
-                    let count = getRandomInt(4, 7);
+                    initialAnimationCompleted = true;
 
-                    let interval = getRandomInt(77, 99);
-
-                    loopTitles(count, interval);
+                    beginLoopTitleAnimation();
 
                 }, 360);
                 
@@ -122,6 +125,16 @@ function consoleMimicTypeWrite() {
         }
 
     }
+
+}
+
+function beginLoopTitleAnimation() {
+
+    let count = getRandomInt(4, 7);
+
+    let interval = getRandomInt(77, 99);
+
+    loopTitles(count, interval);
 
 }
 
