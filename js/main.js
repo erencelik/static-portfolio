@@ -58,17 +58,15 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
+    setTimeout(beginConsoleAnimation, 1800);
+
     setInterval(() => {
 
         document.title = document.title == "erencelik" ? "0x65726e" : "erencelik";
 
-        if(initialAnimationCompleted) {
-            beginLoopTitleAnimation();
-        } else {
-            beginConsoleAnimation();
-        }
+        beginLoopTitleAnimation();
 
-    }, 6000);
+    }, 6480);
 
 });
 
@@ -86,7 +84,7 @@ function beginConsoleAnimation() {
 
     setTimeout(() => {
         consoleMimicIterateTypeWrite();
-    }, 360);
+    }, 256);
 
 }
 
@@ -118,9 +116,9 @@ function consoleMimicIterateTypeWrite() {
 
                     beginLoopTitleAnimation();
 
-                }, 360);
+                }, 256);
                 
-            }, 360);
+            }, 256);
 
         }
 
@@ -130,9 +128,9 @@ function consoleMimicIterateTypeWrite() {
 
 function beginLoopTitleAnimation() {
 
-    let count = getRandomInt(4, 7);
+    let count = getRandomInt(3, 5);
 
-    let interval = getRandomInt(77, 99);
+    let interval = getRandomInt(66, 99);
 
     loopTitles(count, interval);
 
