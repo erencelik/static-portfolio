@@ -22,37 +22,9 @@ let titles = [
     "iOS D?veloper"
 ];
 
-let _titles = [
-    "@root",
-    "whoami",
-    "ind1e",
-    "void",
-    "null",
-    "0x636c6b",
-    "0x65726e",
-    "undefined",
-    "mach_trap",
-    "segment_failure",
-    "unknown",
-    "NaN",
-    "none",
-    "hidden",
-    "&!*)!$(!",
-    "invalid",
-    "failure",
-    "kernel_panic",
-    "m4dness",
-    "chaos",
-    "ch4os",
-    "err",
-    "transient",
-    "exception",
-    "error"
-];
-
-var inputIndex = 0;
-var inputText = 'whoami';
-var initialAnimationCompleted = false;
+let inputIndex = 0;
+let inputText = 'whoami';
+let initialAnimationCompleted = false;
 
 document.addEventListener('contextmenu', event => event.preventDefault());
 
@@ -66,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         beginLoopTitleAnimation();
 
-    }, 6480);
+    }, 6000);
 
 });
 
@@ -128,9 +100,9 @@ function consoleMimicIterateTypeWrite() {
 
 function beginLoopTitleAnimation() {
 
-    let count = getRandomInt(3, 5);
+    let count = getRandomInt(3, 8);
 
-    let interval = getRandomInt(66, 99);
+    let interval = getRandomInt(77, 99);
 
     loopTitles(count, interval);
 
