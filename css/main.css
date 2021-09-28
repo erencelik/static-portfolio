@@ -2,7 +2,7 @@
 
 html {
     scroll-behavior: smooth;
-    font-family: Helvetica, Lucida Sans, Arial, sans-serif;
+    font-family: Inter, Helvetica, Lucida Sans, Arial, sans-serif;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -14,7 +14,7 @@ html {
 body {
     display: block;
     min-width: 900;
-    background-color: #0D0D0D;
+    background-color: #101010;
     color: #BBB;
     letter-spacing: 0.25;
 }
@@ -40,13 +40,6 @@ div {
     font-weight: bold;
 }
 
-#quote>i {
-    font-weight: normal;
-    color: #BBB;
-    font-size: 28;
-    letter-spacing: 1.5;
-}
-
 ul {
     width: 90%;
     display: inline-block;
@@ -65,32 +58,79 @@ li {
 
 a {
     font-weight: bold;
-    color: #DDD;
+    color: #FFF;
     text-decoration: none;
 }
 
 a:hover {
-    color: #FFF;
+    opacity: 0.5;
+}
+
+#console-mimic {
+    margin-top: 64;
+    color: white;
+    font-family: Ubuntu Mono, monospace;
+    font-size: 24;
+    display: inline-block;
+    background-color: rgb(54, 9, 51);
+    padding: 16;
+    width: 480;
+    line-height: 1.25;
+    letter-spacing: .05em;
+    border-radius: 8px 8px;
+}
+
+#console-uname {
+    font-weight: 900;
+    color: yellowgreen;
+}
+
+#console-approx {
+    font-weight: 900;
+    color: rgb(0, 162, 255);
+}
+
+#console-input {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+}
+
+.typing {
+    border-right: .25em solid white; /* The typwriter cursor */
+    animation: typing 1.5s steps(40, end), blink-caret .65s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+  
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
 }
 
 #switcher {
-    /*font-family: 'Courier New', Courier, monospace;*/
-    /* font-family: 'Tourney', cursive; */
-    font-family: VT323, monospace;
-    font-size: 42;
-    letter-spacing: 2;
-    color: #0F0;
+    /* font-family: VT323, 'Courier New', Courier, monospace; */
+    /* font-size: 32; */
+    /* letter-spacing: 2; */
+    /* color: white; */
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
 }
 
 #contact {
     display: inline-block;
-    font-size: 28px;
+    font-size: 24px;
     margin-top: 64;
 }
 
 .list-title {
     display: block;
-    font-size: 26px;
+    font-size: 24px;
     margin-top: 64;
     font-weight: bold;
 }
