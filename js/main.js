@@ -22,7 +22,7 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
-    setTimeout(beginConsoleAnimation, 1800);
+    setTimeout(beginConsoleAnimation, 2000);
 
     setInterval(() => {
 
@@ -47,6 +47,7 @@ function beginConsoleAnimation() {
     document.getElementById("switcher").innerHTML = "&nbsp;";
 
     setTimeout(() => {
+        element.classList.remove("typing-animation");
         consoleMimicIterateTypeWrite();
     }, 256);
 
@@ -80,9 +81,9 @@ function consoleMimicIterateTypeWrite() {
 
                     beginLoopTitleAnimation();
 
-                }, 256);
+                }, 180);
                 
-            }, 256);
+            }, 180);
 
         }
 
@@ -92,9 +93,9 @@ function consoleMimicIterateTypeWrite() {
 
 function beginLoopTitleAnimation() {
 
-    let count = getRandomInt(4, 9);
+    let count = getRandomInt(6, 9);
 
-    let interval = getRandomInt(66, 99);
+    let interval = getRandomInt(99, 121);
 
     loopTitles(count, interval);
 

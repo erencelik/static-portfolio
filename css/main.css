@@ -46,8 +46,8 @@ div {
     color: white;
     display: block;
     text-align: justify;
-    font-size: 32px;
-    line-height: 1.25;
+    font-size: 32;
+    line-height: 1.15;
     font-weight: bold;
 }
 
@@ -74,33 +74,32 @@ a {
 }
 
 a:hover {
-    opacity: 0.5;
+    opacity: 0.75;
 }
 
 #console-mimic {
     margin-top: 64;
     color: white;
     font-family: Ubuntu Mono, monospace;
-    font-size: 24;
+    font-size: 28;
     display: inline-block;
-    background-color: rgb(54, 9, 51);
+    background-color: #2D0922;
     padding: 16;
     padding-top: 24;
     padding-bottom: 24;
-    width: 480;
-    line-height: 1.5;
+    width: 525;
+    line-height: 1.45;
     letter-spacing: .05em;
-    border-radius: 8px 8px;
 }
 
 #console-uname {
     font-weight: 900;
-    color: yellowgreen;
+    color: #88DC33;
 }
 
 #console-approx {
     font-weight: 900;
-    color: rgb(0, 162, 255);
+    color: #8EC5FF;
 }
 
 #console-input {
@@ -110,8 +109,11 @@ a:hover {
 }
 
 .typing {
-    border-right: .25em solid white; /* The typwriter cursor */
-    animation: typing 1.5s steps(40, end), blink-caret .65s step-end infinite;
+    border-right: .41em solid white; /* The typwriter cursor */
+}
+
+.typing-animation {
+    animation: typing 1.5s steps(1, end), blink-caret .75s step-end infinite;
 }
 
 #switcher {
@@ -126,7 +128,7 @@ a:hover {
 
 #contact {
     display: inline-block;
-    font-size: 26px;
+    font-size: 26;
     margin-top: 64;
 }
 
