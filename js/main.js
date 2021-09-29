@@ -1,26 +1,18 @@
-let titles = [
-    "iOS Dev3loper",
-    "iOS D3veloper",
-    "iOS Develop3r",
-    "i0S Developer",
-    "iOX Developer",
-    "iOS Develo?er",
-    "iOS Deve?oper",
-    "1os Developer",
-    "iO5 Developer",
-    "i?S Developer",
-    "iOS @eveloper",
-    "i@s Developer",
-    "iOS Deve1oper",
-    "iOS Develope?",
-    "iOS ?eveloper",
-    "iO? Developer",
-    "!os Developer",
-    "iOS Deve!oper",
-    "?OS Developer",
-    "iOS De?eloper",
-    "iOS D?veloper"
-];
+let jobTitle = "iOS Developer";
+
+let chars = {
+    'i': ['?', '!', '1'],
+    'O': ['?', '@', '0'],
+    'S': ['?', '5', 'X'],
+    ' ': [' '],
+    'D': ['?', '@'],
+    'e': ['?', '3'],
+    'v': ['?'],
+    'l': ['?', '!', '1'],
+    'o': ['?', '0', '@'],
+    'p': ['?'],
+    'r': ['?']
+};
 
 let inputIndex = 0;
 let inputText = 'whoami';
@@ -100,9 +92,9 @@ function consoleMimicIterateTypeWrite() {
 
 function beginLoopTitleAnimation() {
 
-    let count = getRandomInt(3, 8);
+    let count = getRandomInt(4, 9);
 
-    let interval = getRandomInt(77, 99);
+    let interval = getRandomInt(66, 99);
 
     loopTitles(count, interval);
 
@@ -112,33 +104,25 @@ function loopTitles(count, interval) {
 
     var element = document.getElementById("switcher");
 
-    var copied = [...titles];
-
-    var index = getRandomInt(0, copied.length);
-
-    var title = copied[index];
-
-    copied.splice(index, 1);
-
-    element.innerHTML = title;
-
     for(let i = 0; i <= count; i++) {
 
         setTimeout(() => {
 
             if(i == count) {
 
-                element.innerHTML = "iOS Developer";
+                element.innerHTML = jobTitle;
 
             } else {
 
-                index = getRandomInt(0, copied.length);
+                var index = getRandomInt(0, jobTitle.length);
 
-                title = copied[index]
-                
-                copied.splice(index, 1);
+                var char = jobTitle[index];
 
-                element.innerHTML = title;
+                let replacements = chars[char];
+
+                let replacement = replacements[getRandomInt(0, replacements.length)];
+
+                element.innerHTML = setCharAt(jobTitle, index, replacement);
 
             }
 
@@ -152,4 +136,9 @@ function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min);
+}
+
+function setCharAt(str ,index, chr) {
+    if(index > str.length-1) return str;
+    return str.substring(0,index) + chr + str.substring(index+1);
 }
