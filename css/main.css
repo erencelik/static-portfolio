@@ -25,7 +25,7 @@ html {
 body {
     display: block;
     min-width: 900;
-    background-color: #0A0A0A;
+    background-color: #0F0F0F;
     color: #BBB;
     letter-spacing: 0.2;
 }
@@ -83,23 +83,24 @@ a:hover {
     font-family: Ubuntu Mono, monospace;
     font-size: 28;
     display: inline-block;
-    background-color: #2D0922;
+    background-color: #000000;
     padding: 16;
     padding-top: 24;
     padding-bottom: 24;
     width: 525;
     line-height: 1.45;
     letter-spacing: .05em;
+    border-radius: 8px 8px;
 }
 
 #console-uname {
     font-weight: 900;
-    color: #88DC33;
+    color: #00FF00;
 }
 
 #console-approx {
     font-weight: 900;
-    color: #8EC5FF;
+    color: #00ffff;
 }
 
 #console-input {
@@ -113,7 +114,7 @@ a:hover {
 }
 
 .typing-animation {
-    animation: typing 1.5s steps(1, end), blink-caret .75s step-end infinite;
+    animation: typing 1.5s steps(1, end), blink-caret .85s step-end infinite;
 }
 
 #switcher {

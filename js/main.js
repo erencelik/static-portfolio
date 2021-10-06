@@ -63,7 +63,9 @@ function consoleMimicIterateTypeWrite() {
 
         inputIndex++;
 
-        setTimeout(consoleMimicIterateTypeWrite, 128);
+        let writeInterval = getRandomInt(64, 256);
+
+        setTimeout(consoleMimicIterateTypeWrite, writeInterval);
 
     } else {
 
@@ -83,7 +85,7 @@ function consoleMimicIterateTypeWrite() {
 
                 }, 180);
                 
-            }, 180);
+            }, 256);
 
         }
 
@@ -95,7 +97,7 @@ function beginLoopTitleAnimation() {
 
     let count = getRandomInt(6, 9);
 
-    let interval = getRandomInt(99, 121);
+    let interval = getRandomInt(64, 128);
 
     loopTitles(count, interval);
 
