@@ -1,10 +1,21 @@
-let jobTitle = "iOS Developer";
+var titles = [
+    "iOS Developer",
+    "tvOS Developer",
+    "Blockchain Developer"
+];
 
-let chars = {
+const chars = {
     'i': ['?', '!', '1'],
     'O': ['?', '@', '0'],
     'S': ['?', '5', 'X'],
     ' ': [' '],
+    't': ['?', '7'],
+    'B': ['?', '3'],
+    'c': ['?', '©'],
+    'k': ['?'],
+    'h': ['?'],
+    'a': ['?', '4'],
+    'n': ['?'],
     'D': ['?', '@'],
     'e': ['?', '3'],
     'v': ['?'],
@@ -22,15 +33,19 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
-    setTimeout(beginConsoleAnimation, 2000);
+    setTimeout(() => {
 
-    setInterval(() => {
+        beginConsoleAnimation();
 
-        document.title = document.title == "erencelik" ? "0x65726e" : "erencelik";
+        setInterval(() => {
 
-        beginLoopTitleAnimation();
+            document.title = document.title == "erencelik" ? "0x65726e" : "erencelik";
+    
+            beginLoopTitleAnimation();
+    
+        }, 3200);
 
-    }, 6000);
+    }, 2000);
 
 });
 
@@ -95,37 +110,45 @@ function consoleMimicIterateTypeWrite() {
 
 function beginLoopTitleAnimation() {
 
-    let count = getRandomInt(6, 9);
+    const count = getRandomInt(6, 9);
 
-    let interval = getRandomInt(64, 128);
+    const interval = getRandomInt(44, 99);
+    
+    const originalTitle = titles.shift();
 
-    loopTitles(count, interval);
+    titles.push(originalTitle);
+
+    loopTitles(count, interval, originalTitle);
 
 }
 
-function loopTitles(count, interval) {
+function loopTitles(count, interval, originalTitle) {
 
     var element = document.getElementById("switcher");
+
+    element.innerHTML = originalTitle;
 
     for(let i = 0; i <= count; i++) {
 
         setTimeout(() => {
 
             if(i == count) {
-
-                element.innerHTML = jobTitle;
+                
+                element.innerHTML = originalTitle;
 
             } else {
+                
+                const title = originalTitle;
 
-                var index = getRandomInt(0, jobTitle.length);
+                var index = getRandomInt(0, title.length);
 
-                var char = jobTitle[index];
+                var char = title[index];
 
                 let replacements = chars[char];
 
-                let replacement = replacements[getRandomInt(0, replacements.length)];
+                const replacement = replacements[getRandomInt(0, replacements.length)];
 
-                element.innerHTML = setCharAt(jobTitle, index, replacement);
+                element.innerHTML = setCharAt(title, index, replacement);
 
             }
 
