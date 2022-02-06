@@ -25,7 +25,7 @@ html {
 body {
     display: block;
     min-width: 900;
-    background-color: #0F0F0F;
+    background-color: #101010;
     color: #BBB;
     letter-spacing: 0.2;
 }
@@ -35,7 +35,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: rgb(28, 28, 28);        /* color of the tracking area */
+  background: rgba(0, 0, 0, 0);        /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
@@ -86,7 +86,8 @@ a {
 }
 
 a:hover {
-    opacity: 0.75;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
 }
 
 #console-mimic {
