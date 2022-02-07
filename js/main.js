@@ -135,6 +135,8 @@ function loopTitles(count, interval, originalTitle) {
             if(i == count) {
                 
                 element.innerHTML = originalTitle;
+                
+                element.dataset.text = element.innerHTML;
 
             } else {
                 
@@ -149,6 +151,8 @@ function loopTitles(count, interval, originalTitle) {
                 const replacement = replacements[getRandomInt(0, replacements.length)];
 
                 element.innerHTML = setCharAt(title, index, replacement);
+                
+                element.dataset.text = element.innerHTML;
 
             }
 
