@@ -1,29 +1,32 @@
 var titles = [
-    "iOS Developer",
-    "tvOS Developer",
-    "Blockchain Developer"
+  "iOS Developer",
+  "tvOS Developer",
+  "Blockchain Developer"
 ];
 
 const chars = {
-    'i': ['?', '!', '1'],
-    'O': ['?', '@', '0'],
-    'S': ['?', '5', 'X'],
-    ' ': [' '],
-    't': ['?', '7'],
-    'B': ['?', '3'],
-    'c': ['?', '©'],
-    'k': ['?'],
-    'h': ['?'],
-    'a': ['?', '4'],
-    'n': ['?'],
-    'D': ['?', '@'],
-    'e': ['?', '3'],
-    'v': ['?'],
-    'l': ['?', '!', '1'],
-    'o': ['?', '0', '@'],
-    'p': ['?'],
-    'r': ['?']
+  'i': ['?', '!', '1'],
+  'O': ['?', '@', '0'],
+  'S': ['?', '5', 'X'],
+  ' ': [' '],
+  't': ['?', '7'],
+  'B': ['?', '3'],
+  'c': ['?', '©'],
+  'k': ['?'],
+  'h': ['?'],
+  'a': ['?', '4'],
+  'n': ['?'],
+  'D': ['?', '@'],
+  'e': ['?', '3'],
+  'v': ['?'],
+  'l': ['?', '!', '1'],
+  'o': ['?', '0', '@'],
+  'p': ['?'],
+  'r': ['?']
 };
+
+
+const colors = ['ff0000', '00ff00', 'ffee00', '00ffb3'];
 
 let inputIndex = 0;
 let inputText = 'whoami';
@@ -31,144 +34,146 @@ let initialAnimationCompleted = false;
 
 document.addEventListener('contextmenu', event => event.preventDefault());
 
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function (event) {
 
-    setTimeout(() => {
+  document.getElementById('console-uname').style.color = '#' + colors[Math.floor(Math.random() * colors.length)];
 
-        beginConsoleAnimation();
+  setTimeout(() => {
 
-        setInterval(() => {
+    beginConsoleAnimation();
 
-            document.title = document.title == "erencelik" ? "0x65726e" : "erencelik";
-    
-            beginLoopTitleAnimation();
-    
-        }, 3200);
+    setInterval(() => {
 
-    }, 2000);
+      document.title = document.title == "erencelik" ? "0x65726e" : "erencelik";
+
+      beginLoopTitleAnimation();
+
+    }, 3200);
+
+  }, 2000);
 
 });
 
 function beginConsoleAnimation() {
 
-    let element = document.getElementById("console-input");
+  let element = document.getElementById("console-input");
 
-    element.innerHTML = "";
+  element.innerHTML = "";
 
-    if(!element.classList.contains("typing")) {
-        element.classList.add("typing");
-    }
+  if (!element.classList.contains("typing")) {
+    element.classList.add("typing");
+  }
 
-    document.getElementById("switcher").innerHTML = "&nbsp;";
+  document.getElementById("switcher").innerHTML = "&nbsp;";
 
-    setTimeout(() => {
-        element.classList.remove("typing-animation");
-        consoleMimicIterateTypeWrite();
-    }, 256);
+  setTimeout(() => {
+    element.classList.remove("typing-animation");
+    consoleMimicIterateTypeWrite();
+  }, 256);
 
 }
 
 function consoleMimicIterateTypeWrite() {
 
-    let element = document.getElementById("console-input");
+  let element = document.getElementById("console-input");
 
-    if (inputIndex < inputText.length) {
+  if (inputIndex < inputText.length) {
 
-        element.innerHTML += inputText.charAt(inputIndex);
+    element.innerHTML += inputText.charAt(inputIndex);
 
-        inputIndex++;
+    inputIndex++;
 
-        let writeInterval = getRandomInt(64, 256);
+    let writeInterval = getRandomInt(64, 256);
 
-        setTimeout(consoleMimicIterateTypeWrite, writeInterval);
+    setTimeout(consoleMimicIterateTypeWrite, writeInterval);
 
-    } else {
+  } else {
 
-        if(element.innerHTML == inputText) {
+    if (element.innerHTML == inputText) {
 
-            inputIndex = 0;
+      inputIndex = 0;
 
-            setTimeout(() => {
-                
-                element.classList.remove("typing");
+      setTimeout(() => {
 
-                setTimeout(() => {
+        element.classList.remove("typing");
 
-                    initialAnimationCompleted = true;
+        setTimeout(() => {
 
-                    beginLoopTitleAnimation();
+          initialAnimationCompleted = true;
 
-                }, 180);
-                
-            }, 256);
+          beginLoopTitleAnimation();
 
-        }
+        }, 180);
+
+      }, 256);
 
     }
+
+  }
 
 }
 
 function beginLoopTitleAnimation() {
 
-    const count = getRandomInt(6, 9);
+  const count = getRandomInt(6, 9);
 
-    const interval = getRandomInt(44, 99);
-    
-    const originalTitle = titles.shift();
+  const interval = getRandomInt(44, 99);
 
-    titles.push(originalTitle);
+  const originalTitle = titles.shift();
 
-    loopTitles(count, interval, originalTitle);
+  titles.push(originalTitle);
+
+  loopTitles(count, interval, originalTitle);
 
 }
 
 function loopTitles(count, interval, originalTitle) {
 
-    var element = document.getElementById("switcher");
+  var element = document.getElementById("switcher");
 
-    element.innerHTML = originalTitle;
+  element.innerHTML = originalTitle;
 
-    for(let i = 0; i <= count; i++) {
+  for (let i = 0; i <= count; i++) {
 
-        setTimeout(() => {
+    setTimeout(() => {
 
-            if(i == count) {
-                
-                element.innerHTML = originalTitle;
-                
-                element.dataset.text = element.innerHTML;
+      if (i == count) {
 
-            } else {
-                
-                const title = originalTitle;
+        element.innerHTML = originalTitle;
 
-                var index = getRandomInt(0, title.length);
+        element.dataset.text = element.innerHTML;
 
-                var char = title[index];
+      } else {
 
-                let replacements = chars[char];
+        const title = originalTitle;
 
-                const replacement = replacements[getRandomInt(0, replacements.length)];
+        var index = getRandomInt(0, title.length);
 
-                element.innerHTML = setCharAt(title, index, replacement);
-                
-                element.dataset.text = element.innerHTML;
+        var char = title[index];
 
-            }
+        let replacements = chars[char];
 
-        }, (interval*(i+1))-(i*interval*(1/count)));
+        const replacement = replacements[getRandomInt(0, replacements.length)];
 
-    }
+        element.innerHTML = setCharAt(title, index, replacement);
+
+        element.dataset.text = element.innerHTML;
+
+      }
+
+    }, (interval * (i + 1)) - (i * interval * (1 / count)));
+
+  }
 
 }
 
 function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min) + min);
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
 }
 
-function setCharAt(str ,index, chr) {
-    if(index > str.length-1) return str;
-    return str.substring(0,index) + chr + str.substring(index+1);
+function setCharAt(str, index, chr) {
+  if (index > str.length - 1) return str;
+  return str.substring(0, index) + chr + str.substring(index + 1);
 }

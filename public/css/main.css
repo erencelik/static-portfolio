@@ -1,33 +1,42 @@
 /* main.css */
 
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
-  
+
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: white; }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
 }
 
 html {
-    scroll-behavior: smooth;
-    font-family: Inter, Helvetica, Lucida Sans, Arial, sans-serif;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+  scroll-behavior: smooth;
+  font-family: Inter, Helvetica, Lucida Sans, Arial, sans-serif;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
 body {
-    display: block;
-    min-width: 900;
-    background-color: #101010;
-    color: #BBB;
-    letter-spacing: 0.2;
+  display: block;
+  min-width: 900;
+  background-color: #1a1e29;
+  color: #bbb;
+  letter-spacing: 0.2;
 }
 
 body::-webkit-scrollbar {
@@ -35,159 +44,160 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0);        /* color of the tracking area */
+  background: rgba(0, 0, 0, 0); /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: rgb(120, 120, 120);    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
+  background-color: rgb(120, 120, 120); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
   border: 3.2px solid rgba(0, 0, 0, 0);
   background-clip: padding-box;
 }
 
 div {
-    width: 900;
-    display: block;
-    text-align: justify;
-    margin-left: auto;
-    margin-right: auto;
+  width: 900;
+  display: block;
+  text-align: justify;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #info {
-    margin-top: 96;
+  margin-top: 96;
 }
 
-#info>span {
-    color: white;
-    display: block;
-    text-align: justify;
-    font-size: 32;
-    line-height: 1.15;
+#info > span {
+  color: white;
+  display: block;
+  text-align: justify;
+  font-size: 32;
+  line-height: 1.15;
 }
 
 ul {
-    width: 90%;
-    display: inline-block;
-    margin-top: 16;
-    padding: 0;
+  width: 90%;
+  display: inline-block;
+  margin-top: 16;
+  padding: 0;
 }
 
 li {
-    display: block;
-    font-size: 22px;
-    text-align: justify;
-    list-style: none;
-    line-height: 2;
-    margin-top: 8;
+  display: block;
+  font-size: 22px;
+  text-align: justify;
+  list-style: none;
+  line-height: 2;
+  margin-top: 8;
 }
 
 a {
-    color: #FFF;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 a:hover {
-    text-shadow: 0 0 16px rgba(255, 255, 255, 0.6);
+  /* text-shadow: 0 0 16px rgba(255, 255, 255, 0.6); */
+  text-decoration: overline;
 }
 
 #console-mimic {
-    margin-top: 64;
-    color: white;
-    font-family: Ubuntu Mono, monospace;
-    font-size: 28;
-    display: inline-block;
-    background-color: #000000;
-    padding: 16;
-    padding-top: 24;
-    padding-bottom: 24;
-    width: 525;
-    line-height: 1.45;
-    letter-spacing: .05em;
-    border-radius: 8px 8px;
+  margin-top: 64;
+  color: white;
+  font-family: Ubuntu Mono, monospace;
+  font-size: 28;
+  display: inline-block;
+  background-color: #000000;
+  padding: 16;
+  padding-top: 24;
+  padding-bottom: 24;
+  width: 525;
+  line-height: 1.45;
+  letter-spacing: 0.05em;
+  border-radius: 8px 8px;
 }
 
 #console-uname {
-    font-weight: 900;
-    color: #00FF00;
+  font-weight: 900;
+  color: #fff;
 }
 
 #console-approx {
-    font-weight: 900;
-    color: #00ffff;
+  font-weight: 900;
+  color: #00ffff;
 }
 
 #console-input {
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
 }
 
 .typing {
-    border-right: .41em solid white; /* The typwriter cursor */
+  border-right: 0.41em solid white; /* The typwriter cursor */
 }
 
 .typing-animation {
-    animation: typing 1.5s steps(1, end), blink-caret .85s step-end infinite;
+  animation: typing 1.5s steps(1, end), blink-caret 0.85s step-end infinite;
 }
 
 #switcher {
-    /* font-family: VT323, 'Courier New', Courier, monospace; */
-    /* font-size: 32; */
-    /* letter-spacing: 2; */
-    /* color: white; */
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  /* font-family: VT323, 'Courier New', Courier, monospace; */
+  /* font-size: 32; */
+  /* letter-spacing: 2; */
+  /* color: white; */
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
 }
 
 #contact {
-    display: inline-block;
-    font-size: 26;
-    margin-top: 64;
+  display: inline-block;
+  font-size: 26;
+  margin-top: 64;
 }
 
 .list-title {
-    display: block;
-    font-size: 24px;
-    margin-top: 64;
-    font-weight: bold;
+  display: block;
+  font-size: 24px;
+  margin-top: 64;
+  font-weight: bold;
 }
 
 #interests {
-    margin-top: 16;
+  margin-top: 16;
 }
 
-#interests>span {
-    display: inline-block;
-    color: #AAA;
-    padding-left: 28;
-    padding-right: 28;
-    padding-top: 16;
-    padding-bottom: 16;
-    border-radius: 28px;
-    border: 1px solid #444;
-    font-size: 18px;
-    margin-right: 8;
-    margin-top: 16;
+#interests > span {
+  display: inline-block;
+  color: #aaa;
+  padding-left: 28;
+  padding-right: 28;
+  padding-top: 16;
+  padding-bottom: 16;
+  border-radius: 28px;
+  border: 1px solid #444;
+  font-size: 18px;
+  margin-right: 8;
+  margin-top: 16;
 }
 
-#interests>span:hover {
-    border: 1px solid #888;
-    color: white;
+#interests > span:hover {
+  border: 1px solid #888;
+  color: white;
 }
 
 #links {
-    margin-top: 32;
-    margin-bottom: 64;
+  margin-top: 32;
+  margin-bottom: 64;
 }
 
 #copyright {
-    margin-top: 64;
-    margin-bottom: 64;
-    font-size: 12px;
-    color: #444;
+  margin-top: 64;
+  margin-bottom: 64;
+  font-size: 12px;
+  color: #444;
 }
 
-#copyright>span:hover {
-    color: #AAA;
+#copyright > span:hover {
+  color: #aaa;
 }
