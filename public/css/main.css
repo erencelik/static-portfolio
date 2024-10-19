@@ -96,8 +96,7 @@ a {
 }
 
 a:hover {
-  /* text-shadow: 0 0 16px rgba(255, 255, 255, 0.6); */
-  text-decoration: overline;
+  font-weight: bold;
 }
 
 #console-mimic {
@@ -196,8 +195,4 @@ a:hover {
   margin-bottom: 64;
   font-size: 12px;
   color: #444;
-}
-
-#copyright > span:hover {
-  color: #aaa;
 }
