@@ -1,6 +1,7 @@
 var titles = [
   "iOS Developer",
   "tvOS Developer",
+  "Android Developer",
   "Blockchain Developer"
 ];
 
@@ -22,7 +23,9 @@ const chars = {
   'l': ['?', '!', '1'],
   'o': ['?', '0', '@'],
   'p': ['?'],
-  'r': ['?']
+  'r': ['?'],
+  'A': ['?', '4', '@'],
+  'd': ['?']
 };
 
 
@@ -115,7 +118,7 @@ function consoleMimicIterateTypeWrite() {
 
 function beginLoopTitleAnimation() {
 
-  const count = getRandomInt(6, 9);
+  const count = getRandomInt(9, 12);
 
   const interval = getRandomInt(44, 99);
 
