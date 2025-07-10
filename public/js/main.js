@@ -2,6 +2,7 @@ var titles = [
   "iOS Developer",
   "tvOS Developer",
   "Android Developer",
+  "React Native Developer",
   "Blockchain Developer"
 ];
 
